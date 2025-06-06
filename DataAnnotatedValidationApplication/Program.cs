@@ -13,6 +13,10 @@ public class Program
          */
         ValidateAzureSettings(builder);
 
+        // print out the connection string for debugging purposes
+        var gcs = builder.Configuration.GetSection(AzureSettings.Settings).Get<AzureSettings>()!.GraphClientSecret!;
+        Console.WriteLine($"GraphClientSecret: {gcs}");
+
         // Add services to the container.
         builder.Services.AddRazorPages();
 
