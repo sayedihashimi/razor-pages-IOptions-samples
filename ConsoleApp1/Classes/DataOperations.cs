@@ -1,5 +1,6 @@
-﻿using Microsoft.Data.SqlClient;
-using static ConfigurationLibrary.Classes.ConfigurationHelper;
+﻿
+using Microsoft.Data.SqlClient;
+using ConsoleApp1.Classes;
 
 namespace ConsoleApp1.Classes;
 internal class DataOperations
@@ -17,7 +18,7 @@ internal class DataOperations
             WHERE db.database_id > 5
             ORDER BY [Database Name];
             """;
-        using SqlConnection cn = new(ConnectionString());
+        using SqlConnection cn = new(ConfigurationHelper.GetConnectionString());
         Console.WriteLine($"\nconnection string: {cn.ConnectionString}\n");
         using SqlCommand cmd = new(statement, cn);
         cn.Open();
