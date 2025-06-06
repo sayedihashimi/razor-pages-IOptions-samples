@@ -18,6 +18,7 @@ internal class DataOperations
             ORDER BY [Database Name];
             """;
         using SqlConnection cn = new(ConnectionString());
+        Console.WriteLine($"\nconnection string: {cn.ConnectionString}\n");
         using SqlCommand cmd = new(statement, cn);
         cn.Open();
         AnsiConsole.MarkupLine("[yellow]Connection open[/]");
