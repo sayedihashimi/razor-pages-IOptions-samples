@@ -29,6 +29,8 @@ public class IndexModel : PageModel
         var title2 = _applicationSettingsStrongTyped
             .Get(ApplicationSettings.Key).Title;
 
-
+        Console.WriteLine($"title: '{title}' name: '{name}'");
+        Console.WriteLine($"title1: '{title1}' name: '{name1}'");
+        Console.WriteLine($"title2: '{title2}'");
     }
 }
