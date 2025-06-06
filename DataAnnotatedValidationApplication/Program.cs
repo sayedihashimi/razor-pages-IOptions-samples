@@ -14,7 +14,8 @@ public class Program
         ValidateAzureSettings(builder);
 
         // print out the connection string for debugging purposes
-        var gcs = builder.Configuration.GetSection(AzureSettings.Settings).Get<AzureSettings>()!.GraphClientSecret!;
+        // GraphClientSecret is now loaded from User Secrets (if present)
+        var gcs = builder.Configuration["AzureSettings:GraphClientSecret"];
         Console.WriteLine($"GraphClientSecret: {gcs}");
 
         // Add services to the container.
