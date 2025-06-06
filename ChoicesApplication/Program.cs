@@ -11,11 +11,12 @@ public class Program
         // Add services to the container.
         builder.Services.AddRazorPages();
 
-        builder.Services.Configure<ApplicationSettings>(
-            builder.Configuration.GetSection(ApplicationSettings.Key));
-
-        builder.Services.Configure<ApplicationSettings>(
-            ApplicationSettings.Key, builder.Configuration.GetSection(ApplicationSettings.Key));
+        // Bind Position:Title from config, but allow Position:Name to come from user secrets
+        builder.Services.Configure<ApplicationSettings>(options =>
+        {
+            options.Title = builder.Configuration["Position:Title"];
+            options.Name = builder.Configuration["Position:Name"];
+        });
 
         var app = builder.Build();
 
