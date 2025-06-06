@@ -4,7 +4,8 @@
 		<TargetFramework>net9.0</TargetFramework>
 		<Nullable>enable</Nullable>
 		<ImplicitUsings>enable</ImplicitUsings>
-	</PropertyGroup>
+	  <UserSecretsId>f26110fd-cafe-41a3-93fb-651535338ac5</UserSecretsId>
+  </PropertyGroup>
 
 	<ItemGroup>
 	  <Content Remove="C:\Users\paynek\.nuget\packages\serilogthemeslibrary\1.0.0.1\contentFiles\any\net7.0\readme.md" />
